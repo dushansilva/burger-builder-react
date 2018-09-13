@@ -3,7 +3,7 @@ import Aux from '../../hoc/Aux';
 import Burger from '../../components/Burger/Burger';
 import BuildControls from '../../components/Burger/BuildControls/BuildControls';
 import Modal from '../../components/UI/Model/Modal';
-import OrderSummary from '../../components/OrderSummary/OrderSummary';
+import OrderSummary from '../../components/Burger/OrderSummary/OrderSummary';
 const INGREDIENT_PRICES = {
     salad: 0.5,
     cheese: 1
@@ -89,7 +89,8 @@ class BurgerBuilder extends Component {
                     <OrderSummary
                         ingredients={this.state.ingredients}
                         purchaseCancelled={this.purchaseCancelHandler}
-                        purchasaContinued={this.purchaseContinueHandler} />
+                        purchasaContinued={this.purchaseContinueHandler}
+                        price={this.state.totalPrice} />
                 </Modal>
                 <Burger ingredients={this.state.ingredients} />
                 <BuildControls
